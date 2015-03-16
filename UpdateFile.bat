@@ -1,21 +1,22 @@
 @echo off
 
-echo gitは入ってますか？
-echo 対象ディレクトリで git init は行っていますか？
-pause
-
-
 REM 各リポジトリごとの設定内容
-rem リモートファイル取得ディレクトリ(git管理ディレクトリ)
-set repodic=gitdirectory
-rem コピー元ディレクトリ
-set remotedic=\\remotedirectory\hoge
-rem コピー先ディレクトリ
-set copydic=hoge
+REM リモートファイル取得ディレクトリ(git管理ディレクトリ)
+REM set repodic=gitdirectory
+REM コピー元ディレクトリ
+REM set remotedic=\\remotedirectory\hoge
+REM コピー先ディレクトリ
+REM set copydic=hoge
 
 REM 設定内容
 set workNameHead=Work
 set masterName=master
+
+pushd %repodic%
+if not exist ".git" (
+	echo git initを行って下さい。
+	pause
+)
 
 REM 日付取得
 set time_tmp=%time: =0%
