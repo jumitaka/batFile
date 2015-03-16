@@ -7,6 +7,8 @@ REM コピー元ディレクトリ
 REM set remotedic=\\remotedirectory\hoge
 REM コピー先ディレクトリ
 REM set copydic=hoge
+REM robocopy引数
+REM set roboArg=huga
 
 REM 設定内容
 set workNameHead=Work
@@ -42,7 +44,7 @@ if NOT "%STATUS%"=="STATUS" (
 git checkout "%masterName%"
 
 echo %remotedic% の最新取得中です...
-robocopy %remotedic% %repodic%\%copydic% /MIR /NP /R:3 /W:3
+robocopy %remotedic% %repodic%\%copydic% /MIR /NP /R:3 /W:3 /xj %roboArg%
 echo 最新取得完了です。
 echo;
 
