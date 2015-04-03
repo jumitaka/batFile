@@ -49,7 +49,7 @@ echo 最新取得完了です。
 echo;
 
 REM 最新取得したファイルをコミット
-git add .
+git add -A
 git commit -a -m "Update %now%."
 
 REM 作業中ブランチに変更
